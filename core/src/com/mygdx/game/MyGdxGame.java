@@ -39,6 +39,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	TextureRegion textureRegion;
 	Mapa mapa;
 	Music music;
+	static java.nio.file.Path currentPath = java.nio.file.Paths.get(System.getProperty("user.dir"));
 
 	@Override
 	public void create() {
@@ -46,7 +47,6 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		music.setLooping(true);
 		music.setVolume(0.5f);
-
 		music.play();
 		batch = new SpriteBatch();
 
@@ -170,7 +170,8 @@ public class MyGdxGame extends ApplicationAdapter {
 			byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 			Pixmap pixmap = new Pixmap(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
 			BufferUtils.copy(pixels, 0, pixmap.getPixels(), pixels.length);
-			FileHandle fileHandle = Gdx.files.absolute("C:C:\\Users\\ACER\\Desktop\\Tetris1-main\\assets\n\\tmp1.png");
+			String TMP = currentPath.toString()+"\\tmp1.png";
+			FileHandle fileHandle = Gdx.files.absolute(TMP);
 
 			PixmapIO.writePNG(fileHandle, pixmap);
 			pixmap.dispose();
@@ -195,14 +196,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		for(int i=0;i<16;i++){
 			batch.draw(texture,i*50,0);
 		}
-	}
-	//private static String getCurrentFolderPath() {
-		// Uzyskaj ścieżkę do folderu, w którym znajduje się program
-		//Path currentPath = Path.get(System.getProperty("user.dir"));
-		//Path currentPath = Paths.get(System.getProperty("user.dir"));
 
-		// Zwróć ścieżkę jako String
-		//return currentPath.toString();
-	//}
+	}
+
+
 
 }
