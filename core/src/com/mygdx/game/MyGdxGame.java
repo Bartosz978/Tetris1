@@ -11,10 +11,13 @@ import com.badlogic.gdx.graphics.PixmapIO;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Path;
+
 import com.badlogic.gdx.utils.BufferUtils;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.math.Rectangle;
 
+import java.nio.file.Paths;
 import java.security.Key;
 import java.util.ArrayList;
 import java.util.Random;
@@ -167,8 +170,8 @@ public class MyGdxGame extends ApplicationAdapter {
 			byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 			Pixmap pixmap = new Pixmap(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
 			BufferUtils.copy(pixels, 0, pixmap.getPixels(), pixels.length);
-			// Użyj pełnej ścieżki do pliku (np. "/ścieżka/do/pliku/tmp1.png")
-			FileHandle fileHandle = Gdx.files.absolute("C:\\Users\\User\\Desktop\\Tetris\\assets\\tmp1.png");
+			FileHandle fileHandle = Gdx.files.absolute("C:C:\\Users\\ACER\\Desktop\\Tetris1-main\\assets\n\\tmp1.png");
+
 			PixmapIO.writePNG(fileHandle, pixmap);
 			pixmap.dispose();
 
@@ -193,5 +196,13 @@ public class MyGdxGame extends ApplicationAdapter {
 			batch.draw(texture,i*50,0);
 		}
 	}
+	//private static String getCurrentFolderPath() {
+		// Uzyskaj ścieżkę do folderu, w którym znajduje się program
+		//Path currentPath = Path.get(System.getProperty("user.dir"));
+		//Path currentPath = Paths.get(System.getProperty("user.dir"));
+
+		// Zwróć ścieżkę jako String
+		//return currentPath.toString();
+	//}
 
 }
