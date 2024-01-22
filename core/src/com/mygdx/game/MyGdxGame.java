@@ -30,6 +30,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	Obiekty obj;
 
 	static Texture tmp;
+	//public String path =        String assetsPath = assetsFolder.path();
 
 	static boolean posiada_klocek;
 	TextureRegion textureRegion;
@@ -166,7 +167,6 @@ public class MyGdxGame extends ApplicationAdapter {
 			byte[] pixels = ScreenUtils.getFrameBufferPixels(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 			Pixmap pixmap = new Pixmap(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
 			BufferUtils.copy(pixels, 0, pixmap.getPixels(), pixels.length);
-
 			// Użyj pełnej ścieżki do pliku (np. "/ścieżka/do/pliku/tmp1.png")
 			FileHandle fileHandle = Gdx.files.absolute("C:\\Users\\User\\Desktop\\Tetris\\assets\\tmp1.png");
 			PixmapIO.writePNG(fileHandle, pixmap);
@@ -178,7 +178,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		}
 
 		posiada_klocek = false;
-		tmp = new Texture("C:\\Users\\User\\Desktop\\Tetris\\assets\\tmp1.png");
+		tmp = new Texture("tmp1.png");
 		Zapis = false;
 	}
 	void jednorazowo(){

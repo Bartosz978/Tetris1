@@ -129,7 +129,7 @@ public class Mapa {
         }
         pixmap.dispose();
         MyGdxGame.posiada_klocek = false;
-        MyGdxGame.tmp = new Texture("C:\\Users\\User\\Desktop\\Tetris\\assets\\tmp2.png");
+        MyGdxGame.tmp = new Texture("tmp2.png");
         MyGdxGame.Zapis = false;
 
     }
@@ -192,14 +192,9 @@ public class Mapa {
                 zapiszDoPliku("text.txt", Plansza_do_gry);
                 Rysuj_od_nowa();
 
-                // Przesuń bloki w kolumnach powyżej o jedną pozycję w dół
- /*
-    }*/
+
             }
-            // Wywołaj funkcję rekurencyjnie, jeśli repeat > 0
-            // if (repeat > 0) {
-            // Sprawdz_Czy_Jest_blok(repeat - 1);
-            //}
+
         }
 
 
