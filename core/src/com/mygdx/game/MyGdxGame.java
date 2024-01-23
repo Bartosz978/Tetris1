@@ -137,10 +137,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 
 				}
-				if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-					obj.Tranformacja();
-					textureRegion = new TextureRegion(obj.getTekstura(), obj.X_Region, obj.Y_Region, obj.szerokosc, obj.wysokosc);
-				}
+
 
 				if(mapa.Kolizja(obj,poziomo,odcinek)==true && rusza_sie){
 					if(poziomo){
