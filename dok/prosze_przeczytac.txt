@@ -1,0 +1,1 @@
+w folderze "dokumentacja" znajduje się plik "index", należy go otworzyć, aby dostać się do dokumentacji kodu
